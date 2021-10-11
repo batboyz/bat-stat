@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Application to keep track of statistics for the Fairfield - Berkeley Baseball Association (FBBA).
+
+## Starting Express Server
+
+You will first need to install and configure MySQL.
+
+Set the following environment variables used by the application:
+```
+export BS_HOST=localhost (or your target host)
+export BS_PORT=<target_port> (default to 3306)
+export BS_USER=<your_user> (default to 'root')
+export BS_PASSWORD=<your_password>
+```
+
+Seed the MySQL database with the ```seed.sql``` script:
+```
+mysql -u $BS_USER -p < ./setup/seed.sql
+```
+
+To start Express server, run ```node server.js``` at the root of the project.
 
 ## Available Scripts
 
@@ -29,42 +48,14 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## API Routes
+| Method | Route              | Description                                             |
+|--------|--------------------|---------------------------------------------------------|
+| ```GET``` | /player            | Returns all players in the league                       |
+| ```GET``` | /player/id/:id     | Returns a player (if it exists) with specified id       |
+| ```GET``` | /player/name/:name | Returns a list of players that match the name specified |
+| ```GET``` | /team              | Returns all teams in the league                         |
+| ```GET``` | /team/id/:id       | Returns a team (if it exists) with specified name       |
+| ```GET``` | /team/name/:name   | Returns a list of teams that match the name specified   |
+|        |                    |                                                         |
