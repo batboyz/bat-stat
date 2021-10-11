@@ -9,10 +9,19 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 
+
 app.use(express.static(path.join(__dirname, 'build')));
 
-// app.get('/', (req, res, next) => {
-//   res.send('HEY BAT BOYZ');
-// })
+app.get('/player/:id', (req, res) => {
+  res.send('HEY BAT BOYZ');
+})
+
+app.get('/players', (req, res) => {
+  res.send('HEY BAT BOYZ');
+})
+
+app.post('/player', (req, res) => {
+  res.send('HEY BAT BOYZ');
+})
 
 app.listen(port, () => console.log(`App is listening on port ${port}`))
