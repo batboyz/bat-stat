@@ -4,7 +4,8 @@ Application to keep track of statistics for the Fairfield - Berkeley Baseball As
 
 ## Starting Express Server
 
-You will first need to install and configure MySQL.
+You will first need to install and configure MySQL. -> Some useful documentation for mysql setup
+https://www.tutorialspoint.com/how-to-log-in-as-a-different-user-on-mysql
 
 Set the following environment variables used by the application:
 ```
