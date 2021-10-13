@@ -1,5 +1,5 @@
 import { Route, Switch, NavLink } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import HomePage from './pages/HomePage/HomePage';
 import GamePage from './pages/GamePage/GamePage';
 import PlayerPage from './pages/PlayerPage/PlayerPage';

@@ -20,7 +20,7 @@ Seed the MySQL database with the ```seed.sql``` script:
 mysql -u $BS_USER -p < ./setup/seed.sql
 ```
 
-To start Express server, run ```node server.js``` at the root of the project.
+To start Express server, run ```node server.js``` at the root of the project. It will instantiate a server on port 4000.
 
 ## Available Scripts
 

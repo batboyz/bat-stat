@@ -16,9 +16,11 @@ CREATE TABLE IF NOT EXISTS teams (
 CREATE TABLE IF NOT EXISTS players (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(64) NOT NULL,
+  image_url VARCHAR(64) DEFAULT 'https://i.ebayimg.com/images/g/vaQAAOSwmWhgU5PV/s-l300.jpg',
   number INT DEFAULT NULL,
   position VARCHAR(64) DEFAULT NULL,
   batting_average FLOAT DEFAULT 0.0,
+  on_base_percentage FLOAT DEFAULT 0.0,
   at_bats INT DEFAULT 0,
   strikeouts INT DEFAULT 0,
   walks INT DEFAULT 0,
@@ -32,4 +34,4 @@ CREATE TABLE IF NOT EXISTS players (
 );
 
 INSERT INTO teams (name) VALUES ('Giants');
-INSERT INTO players (name, number, team_id) VALUES ('Buster Posey', 28, 1);
+INSERT INTO players (name, number, position, team_id) VALUES ('Pickle Rick', 28, 'P', 1);

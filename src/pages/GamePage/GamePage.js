@@ -1,4 +1,4 @@
-import './GamePage.css';
+import './GamePage.scss';
 
 function GamePage() {
     return (
