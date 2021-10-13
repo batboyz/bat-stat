@@ -2,8 +2,8 @@ CREATE DATABASE IF NOT EXISTS bat_stat;
 
 USE bat_stat;
 
-DROP TABLE players;
-DROP TABLE teams;
+DROP TABLE IF EXISTS bat_stat.players;
+DROP TABLE IF EXISTS bat_stat.teams;
 
 CREATE TABLE IF NOT EXISTS teams (
   id INT NOT NULL AUTO_INCREMENT,
