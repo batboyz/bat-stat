@@ -1,5 +1,5 @@
 import baseball from '../../static/baseball.png';
-import './HomePage.css';
+import './HomePage.scss';
 
 function HomePage() {
     return (
