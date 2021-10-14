@@ -3,6 +3,7 @@ import './App.scss';
 import HomePage from './pages/HomePage/HomePage';
 import GamePage from './pages/GamePage/GamePage';
 import PlayerPage from './pages/PlayerPage/PlayerPage';
+import AdminPage from './pages/Admin/AdminPage';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path="/Players">
             <PlayerPage />
+          </Route>
+          <Route path="/Admin">
+            <AdminPage />
           </Route>
         </Switch>
       </div>
