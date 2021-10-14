@@ -1,7 +1,7 @@
 import './AdminPage.scss';
 import React, { useState} from 'react';
 import axios from 'axios';
-import Button from '../common/Button/Button';
+import Button from '../components/Button/Button';
 import AddPlayerForm from '../AddPlayerForm/AddPlayerForm';
 
 function AdminPage() {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './PlayerPage.scss';
-import PlayerListItem from '../common/PlayerListItem/PlayerListItem.js';
+import PlayerListItem from '../components/PlayerListItem/PlayerListItem.js';
 
 const PlayerPage = () => {
     const [players, setPlayers] = useState([]);
