@@ -1,0 +1,16 @@
+.button-container {
+  padding: 10px 30px;
+  height: 40px;
+  box-sizing: border-box;
+  color: white;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  border: 1px solid rgb(145, 70, 255);
+  
+  &:hover {
+    border: 1px solid rgb(145, 70, 255);
+    background-color: rgb(145, 70, 255);
+  }
+}

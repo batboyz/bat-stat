@@ -1,0 +1,18 @@
+
+.modal-background {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal {
+    height: 400px;
+    width: 70vw;
+    border-radius: 5%;
+    background-color: #4C5363;
+  }
+}
