@@ -13,8 +13,8 @@ function HomePage() {
         if (ballcount < 3 ) 
             setBall(ballcount + 1); 
         else{               
-            setBall(ballcount - ballcount);
-            setStrike(strikecount - strikecount);
+            setBall(0);
+            setStrike(0);
         }          
     }
 
@@ -22,8 +22,8 @@ function HomePage() {
         if (strikecount < 2)
             setStrike(strikecount + 1);
         else{
-            setStrike(strikecount - strikecount);
-            setBall(ballcount - ballcount);
+            setStrike(0);
+            setBall(0);
             outCounter();
         }           
     }
@@ -40,20 +40,18 @@ function HomePage() {
             }
             else
                 setHalf(false);
-
-            
         } 
     }
 
     let ballHit = () => {
-        setStrike(strikecount - strikecount)
-        setBall(ballcount - ballcount)
+        setStrike(0)
+        setBall(0)
 
     }
 
     let ballHitOut = () => {
-        setStrike(strikecount - strikecount)
-        setBall(ballcount - ballcount)
+        setStrike(0)
+        setBall(0)
         outCounter();
     }
 
