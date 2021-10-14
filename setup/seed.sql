@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS teams (
 CREATE TABLE IF NOT EXISTS players (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(64) NOT NULL,
-  image_url VARCHAR(64) DEFAULT 'https://i.ebayimg.com/images/g/vaQAAOSwmWhgU5PV/s-l300.jpg',
+  image_url VARCHAR(256) DEFAULT 'https://i.ebayimg.com/images/g/vaQAAOSwmWhgU5PV/s-l300.jpg',
   number INT DEFAULT NULL,
   position VARCHAR(64) DEFAULT NULL,
   batting_average FLOAT DEFAULT 0.0,
@@ -33,5 +33,9 @@ CREATE TABLE IF NOT EXISTS players (
   FOREIGN KEY (team_id) REFERENCES teams(id)
 );
 
-INSERT INTO teams (name) VALUES ('Giants');
+INSERT INTO teams (name) VALUES ('Fairfield');
+INSERT INTO teams (name) VALUES ('Berkeley');
 INSERT INTO players (name, number, position, team_id) VALUES ('Pickle Rick', 28, 'P', 1);
+INSERT INTO players (name, number, position, team_id, image_url) VALUES ('Fred', 69, 'P', 2, 'https://www.edsys.in/wp-content/uploads/flintstone-wecompress.com_-1536x1152.jpg');
+INSERT INTO players (name, number, position, team_id, image_url) VALUES ('Homer', 32, 'C', 2, 'https://www.edsys.in/wp-content/uploads/0bb15fd89591ca05d13d4095227f65f1.jpg');
+INSERT INTO players (name, number, position, team_id, image_url) VALUES ('Robert', 23, 'C', 1, 'https://www.edsys.in/wp-content/uploads/spongebob_0_0-1536x863.jpg');
