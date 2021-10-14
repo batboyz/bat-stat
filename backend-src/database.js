@@ -15,7 +15,7 @@ module.exports = {
       password: process.env.BS_PASSWORD || 'HR', // my local pw
       database: 'bat_stat'
     });
-    
+
     const performQuery = promisify(sql.query.bind(sql))
 
     const response = await performQuery(q).catch(err => { throw err });

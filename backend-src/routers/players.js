@@ -21,5 +21,10 @@ router.get('/name/:name', async (req, res) => {
   res.send(player);
 })
 
+router.post('/', async (req, res) => {
+  const { name, position, team } = req.body;
+  res.send(req.body);
+})
+
 
 module.exports = router;

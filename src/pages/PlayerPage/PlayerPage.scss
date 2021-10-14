@@ -7,9 +7,12 @@
   .Playerpage-body {
     width: 90%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    overflow: scroll;
+    
+    .player-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      overflow: scroll;
+    }
   }
 }
