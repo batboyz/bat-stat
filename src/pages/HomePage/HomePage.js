@@ -1,4 +1,3 @@
-import { useState } from "react";
 import baseball from "../../static/baseball.png";
 import "./HomePage.scss";
 
