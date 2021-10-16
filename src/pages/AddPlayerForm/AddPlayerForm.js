@@ -1,5 +1,5 @@
-import Modal from "../common/Modal/Modal";
-import Button from "../common/Button/Button";
+import Modal from "../components/Modal/Modal";
+import Button from "../components/Button/Button";
 
 const AddPlayerForm = ({ closeModalFn, values, changeFn, submitFn }) => {
   return (
