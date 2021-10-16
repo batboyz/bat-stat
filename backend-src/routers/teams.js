@@ -21,5 +21,10 @@ router.get('/name/:name', async (req, res) => {
   res.send(team);
 })
 
+router.post('/', async (req, res) => {
+  controllers.teams.add(req.body)
+  res.send({ status: 'Success!'})
+})
+
 
 module.exports = router;
