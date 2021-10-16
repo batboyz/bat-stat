@@ -10,9 +10,10 @@
     
     .player-list {
       display: flex;
+      height: calc(100% - 40px);
       justify-content: center;
       flex-wrap: wrap;
-      overflow: scroll;
+      overflow-y: scroll;
     }
   }
 }
