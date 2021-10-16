@@ -22,8 +22,16 @@ const PlayerPage = () => {
         fetchData();
     }, []);
 
-    const submitForm = () => {
-        const { data } = axios.post('/player/')
+    const submitForm = async (e) => {
+        e.preventDefault();
+        const { data: postData } = await axios.post('/player', newPlayerValues)
+        console.log(postData)
+        if (postData.status === "Success!") {
+            const { data: getData } = await axios.get("/player")
+            setPlayers(getData)
+        } else {
+            console.log("Error!")
+        }
         setAddPlayerModal(false)
     }
 

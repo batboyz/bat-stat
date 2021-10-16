@@ -23,5 +23,16 @@ module.exports = {
       return [];
     }
     return players;
+  },
+
+  add: async ({ name, team, position }) => {
+    // TODO: check first if team exists, if it doenst exist create it. OR in the UI just display the list of teams so no typo creations (I like that better)
+    console.log(name, team, position)
+    console.log(`INSERT INTO players (name, team_id, position) VALUES ('${name}', (SELECT id FROM teams WHERE name='${team}'), '${position}');`)
+    const players = await db.query(`INSERT INTO players (name, team_id, position) VALUES ('${name}', (SELECT id FROM teams WHERE name='${team}'), '${position}');`).catch(err => console.log(err));
+    if (!players) {
+      return [];
+    }
+    return players;
   }
 }

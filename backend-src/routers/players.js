@@ -22,8 +22,8 @@ router.get('/name/:name', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  const { name, position, team } = req.body;
-  res.send(req.body);
+  controllers.players.add(req.body)
+  res.send({ status: 'Success!'})
 })
 
 
