@@ -21,6 +21,23 @@ CREATE TABLE IF NOT EXISTS players (
   position VARCHAR(64) DEFAULT NULL,
   batting_average FLOAT DEFAULT 0.0,
   on_base_percentage FLOAT DEFAULT 0.0,
+  PRIMARY KEY (id),
+);
+
+CREATE TABLE IF NOT EXISTS game (
+  id INT NOT NULL AUTO_INCREMENT,
+  home_id INT,
+  away_id INT,
+  PRIMARY KEY (id),
+  FOREIGN KEY (home_id) REFERENCES teams(id),
+  FOREIGN KEY (away_id) REFERENCES teams(id)
+);
+
+CREATE TABLE IF NOT EXISTS game_stats (
+  id INT,
+  game_id INT,
+  team_id INT,
+  player_id INT,
   at_bats INT DEFAULT 0,
   strikeouts INT DEFAULT 0,
   walks INT DEFAULT 0,
@@ -28,9 +45,12 @@ CREATE TABLE IF NOT EXISTS players (
   doubles INT DEFAULT 0,
   triples INT DEFAULT 0,
   home_runs INT DEFAULT 0,
-  team_id INT,
-  PRIMARY KEY (id),
-  FOREIGN KEY (team_id) REFERENCES teams(id)
+  RBI INT DEFAULT 0,
+  runs INT DEFAULT 0,
+  PRIMARY KEY (id, game_id),
+  FOREIGN KEY (game_id) REFERENCES game(id),
+  FOREIGN KEY (team_id) REFERENCES teams(id),
+  FOREIGN KEY (player_id) REFERENCES players(id)
 );
 
 INSERT INTO teams (name) VALUES ('Fairfield');
