@@ -28,6 +28,9 @@ CREATE TABLE IF NOT EXISTS game (
   id INT NOT NULL AUTO_INCREMENT,
   home_id INT,
   away_id INT,
+  home_score INT,
+  away_score INT,
+  game_date DATE,
   PRIMARY KEY (id),
   FOREIGN KEY (home_id) REFERENCES teams(id),
   FOREIGN KEY (away_id) REFERENCES teams(id)
