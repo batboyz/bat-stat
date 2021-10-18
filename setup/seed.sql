@@ -19,8 +19,6 @@ CREATE TABLE IF NOT EXISTS players (
   image_url VARCHAR(256) DEFAULT 'https://i.ebayimg.com/images/g/vaQAAOSwmWhgU5PV/s-l300.jpg',
   number INT DEFAULT NULL,
   position VARCHAR(64) DEFAULT NULL,
-  batting_average FLOAT DEFAULT 0.0,
-  on_base_percentage FLOAT DEFAULT 0.0,
   PRIMARY KEY (id),
 );
 
@@ -28,8 +26,8 @@ CREATE TABLE IF NOT EXISTS game (
   id INT NOT NULL AUTO_INCREMENT,
   home_id INT,
   away_id INT,
-  home_score INT,
-  away_score INT,
+  home_score INT DEFAULT 0,
+  away_score INT DEFAULT 0,
   game_date DATE,
   PRIMARY KEY (id),
   FOREIGN KEY (home_id) REFERENCES teams(id),
