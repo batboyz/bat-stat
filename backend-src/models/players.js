@@ -18,7 +18,7 @@ module.exports = {
   },
 
   getAll: async () => {
-    const players = await db.query(`SELECT players.*, teams.name AS team FROM players INNER JOIN teams ON players.team_id=teams.id`).catch(err => console.log(err));
+    const players = await db.query(`SELECT players.*, SUM(game_stats.at_bats) AS at_bats, SUM(game_stats.strikeouts) AS strikeouts, SUM(game_stats.walks) AS walks, SUM(game_stats.hits) AS hits, SUM(game_stats.doubles) AS doubles, SUM(game_stats.triples) AS triples, SUM(game_stats.home_runs) AS home_runs, SUM(game_stats.RBI) AS RBI, SUM(game_stats.runs) AS runs, teams.name AS team FROM players INNER JOIN game_stats ON players.id=game_stats.player_id INNER JOIN teams ON players.team_id=teams.id GROUP BY players.id`).catch(err => console.log(err));
     if (!players) {
       return [];
     }

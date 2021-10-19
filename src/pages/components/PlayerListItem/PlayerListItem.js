@@ -21,8 +21,9 @@ const PlayerListItem = ({ data }) => {
           <div className="data hrs" title="Home Runs">HR: {data.home_runs}</div>
           </div>
           <div className="col">
-            <div className="data avg" title="Batting Average">Avg: {data.batting_average.toFixed(3)}</div>
-            <div className="data obp" title="On-Base Percentage">OBP: {data.on_base_percentage.toFixed(3)}</div>
+            {/* TODO: needs to calculate BA and ONB% before displaying */}
+            <div className="data avg" title="Batting Average">Avg: 0.00</div>
+            <div className="data obp" title="On-Base Percentage">OBP: 0.00</div>
             <div className="data so" title="Strikeouts">SO: {data.strikeouts}</div>
             <div className="data bb" title="Walks">BB: {data.walks}</div>
           </div>
