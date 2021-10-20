@@ -24,6 +24,7 @@ function BallCounter() {
         if(team1Hit === true) setScore1(team1Score + 1);
         else setScore2(team2Score + 1);
       }
+      else console.log("ERROR: TOO MANY ON BASE")
     }
   };
 
@@ -56,8 +57,11 @@ function BallCounter() {
   let ballHit = () => {
     setStrike(0);
     setBall(0);
-    setOnBase(onBase + 1);
+    if (onBase < 3) setOnBase(onBase + 1); 
+    else  
+      console.log("ERROR: TOO MANY ON BASE")
   };
+
 
   let ballHitOut = () => {
     setStrike(0);
@@ -90,21 +94,28 @@ function BallCounter() {
   }
 
   let runBatted = (RBI) => {
-    if (RBI.target.value === "oneRBI"){
-      setOnBase(onBase - 1);
-      if(team1Hit === true) setScore1(team1Score + 1);
-      else setScore2(team2Score + 1);
-    }
-    else if (RBI.target.value === "twoRBI"){
-      setOnBase(onBase - 2);
-      if (team1Hit === true) setScore1(team1Score + 2);
-      else setScore2(team2Score + 2);
-    }
-    else {
-      setOnBase(onBase - 3);
-      if (team1Hit === true) setScore1(team1Score + 3);
-      else setScore2(team2Score + 3);
+    const convertedRBI = parseInt(RBI.target.value, 10);
+
+    if (onBase >= convertedRBI){
+
+      if (RBI.target.value === "1"){
+        setOnBase(onBase - 1);
+        if(team1Hit === true) setScore1(team1Score + 1);
+        else setScore2(team2Score + 1);
+      }
+      else if (RBI.target.value === "2"){
+        setOnBase(onBase - 2);
+        if (team1Hit === true) setScore1(team1Score + 2);
+        else setScore2(team2Score + 2);
+      }
+      else {
+        setOnBase(onBase - 3);
+        if (team1Hit === true) setScore1(team1Score + 3);
+        else setScore2(team2Score + 3);
+      }
   }
+  else console.log("ERROR: NOT ENOUGH PLAYERS ON BASE")
+
 }
 
 
@@ -138,15 +149,15 @@ function BallCounter() {
             Home Run{" "}
           </button>
           <p>Runs Batted In: </p>
-          <button onClick={runBatted} value = "oneRBI" className="ballButton">
+          <button onClick={runBatted} value = "1" className="ballButton">
             {" "}
             1 Run{" "}
           </button>
-          <button onClick={runBatted} value = "twoRBI" className="ballButton">
+          <button onClick={runBatted} value = "2" className="ballButton">
             {" "}
             2 Runs{" "}
           </button>
-          <button onClick={runBatted} value = "threeRBI" className="ballButton">
+          <button onClick={runBatted} value = "3" className="ballButton">
             {" "}
             3 Runs{" "}
           </button>
